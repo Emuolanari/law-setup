@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGem, faPhone, faPrint } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   return (
@@ -11,11 +12,6 @@ function Footer() {
             <span>Get connected with us on social networks:</span>
           </div>
           <div>
-            <Link href="">
-            <a className="me-4 text-reset">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            </Link>
             <a href="" className="me-4 text-reset">
             <FontAwesomeIcon icon={faTwitter} />
             </a>
@@ -36,7 +32,7 @@ function Footer() {
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>Company name
+                <FontAwesomeIcon className="me-3" icon={faGem} />Law Setup
                 </h6>
                 <p>
                   Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -48,16 +44,16 @@ function Footer() {
                   Products
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">Angular</a>
+                  <a href="#!" className="text-reset">Lorem ipsum</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">React</a>
+                  <a href="#!" className="text-reset">Settle</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Vue</a>
+                  <a href="#!" className="text-reset">Court stuff</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Laravel</a>
+                  <a href="#!" className="text-reset">Land disputes</a>
                 </p>
               </div>
 
@@ -85,13 +81,13 @@ function Footer() {
                 <h6 className="text-uppercase fw-bold mb-4">
                   Contact
                 </h6>
-                <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                <p><i className="fas fa-home me-3"></i> Port Harcourt, Nigeria</p>
                 <p>
                   <i className="fas fa-envelope me-3"></i>
                   info@example.com
                 </p>
-                <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+                <p> <FontAwesomeIcon className="me-3" icon={faPhone} /> +234 234 567 88</p>
+                <p><FontAwesomeIcon className="me-3" icon={faPrint} /> +234 234 567 89</p>
               </div>
 
             </div>

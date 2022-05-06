@@ -2,7 +2,7 @@ export default function Login() {
     return (
         <div className="container mt-4 mb-auto">
             <div className="row justify-content-center">
-                <div className = "col-md-4">
+                <div className = "">
                 <form>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
