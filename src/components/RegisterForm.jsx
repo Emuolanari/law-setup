@@ -23,6 +23,8 @@ function RegisterForm() {
               },
               body: JSON.stringify(
                   {
+                      "first_name": firstName,
+                      "last_name": lastName,
                       "email": email,
                       "password": password,
                       "role": "fbfd5185-1205-4b53-8ba7-85a20e756b3e"
