@@ -11,15 +11,49 @@ function RegisterForm() {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [isChecked, setIschecked] = useState(false);
+  const [error, SetError] = useState('')
+  const [success, setSuccess] = useState('')
+
+  const createUser = async ()=>{
+      try{
+          fetch(process.env.NEXT_PUBLIC_REGISTER_URL,{
+              method:"POST",
+              headers:{
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(
+                  {
+                      "email": email,
+                      "password": password,
+                      "role": "fbfd5185-1205-4b53-8ba7-85a20e756b3e"
+    
+                  }
+              )
+              
+          })
+          setSuccess("Successfully registered!")
+
+      }
+      catch(e){
+          console.log(e);
+      }
+  }
 
   const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log(e);
+      if(password!=passwordConfirm){
+          SetError('Entered passwords do not match!');
+          return
+      }
+      await createUser();
+      
   }
-  
+
   return (
       <section className="" >
-         
+          {(error!==null)&& <div className="container"><h5 className='text-danger'>{error}</h5></div>}
+          {success&& <div className="container"><h5 className='text-success'>{success}</h5></div>}
+
           <div className="container">
               <div className="row d-flex justify-content-center align-items-center h-100">
                   <div className="col-lg-12 col-xl-11">
@@ -66,7 +100,7 @@ function RegisterForm() {
                                           </div>
                                           <div className="form-check d-flex justify-content-center mb-5">
                                               <input className="form-check-input me-2" type="checkbox" value=""
-                                                  id="check" defaultChecked={isChecked} onChange={(e)=>setIschecked(e.target.checked)}/>
+                                                  id="check" defaultChecked={isChecked} onChange={(e)=>setIschecked(e.target.checked)} required/>
                                               <label className="form-check-label" htmlFor="check">
                                                   I agree all statements in <a href="#!">Terms of service</a>
                                               </label>
