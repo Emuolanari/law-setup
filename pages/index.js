@@ -16,7 +16,6 @@ const Home = () => {
         of Lorem Ipsum</p>
         </div>
         <div className="col-md-6">
-           <Login/>
         </div>
       </div>
     </div>

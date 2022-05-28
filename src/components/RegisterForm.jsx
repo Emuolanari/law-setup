@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { faEnvelope, faKey, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Judge from '../assets/judge.jpg'
+import Router from 'next/router';
 
 function RegisterForm() {
   const [firstName, setFirstName] = useState('');
@@ -37,7 +38,7 @@ function RegisterForm() {
 
       }
       catch(e){
-          console.log(e);
+          console.error(e);
       }
   }
 
@@ -47,7 +48,10 @@ function RegisterForm() {
           SetError('Entered passwords do not match!');
           return
       }
+      
       await createUser();
+      //login user before changing route
+      setTimeout(()=>{Router.push('/')},2000);
       
   }
 
