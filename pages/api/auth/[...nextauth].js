@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 const options = {
+  site: process.env.NEXTAUTH_URL,
   providers: [
     CredentialsProvider({
       name: 'Credentials',

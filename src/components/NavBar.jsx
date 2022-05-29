@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import {signOut, useSession} from 'next-auth/react';
+
+
 export default function NavBar(){
+    const status = useSession().status;
+    console.log('status',status)
+
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light ml-auto">
             <div className='container'>
@@ -24,13 +30,29 @@ export default function NavBar(){
                             <Link href="/contact"><a className="nav-link">Contact</a></Link>
                         </li>
 
-                        <li className="nav-item">
-                            <Link href="/register"><a className="nav-link">Register</a></Link>
-                        </li>
 
-                        <li className="nav-item">
-                            <Link href="/signIn"><a className="nav-link">Sign In</a></Link>
-                        </li>
+                        {status=='authenticated'?(
+                            <>
+                            <li className="nav-item">
+                                <Link href="/lawyerArea"><a className="nav-link">Case Types</a></Link>
+                            </li>   
+
+                            <li className="nav-item">
+                                <button className="nav-link" onClick={()=>signOut({callbackUrl:'/'})}>Sign Out</button>
+                            </li>   
+                            </>
+                        ):(
+                            <>
+                                <li className="nav-item">
+                                    <Link href="/register"><a className="nav-link">Register</a></Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link href="/signIn"><a className="nav-link">Sign In</a></Link>
+                                </li>
+
+                            </>
+                        )}
 
                     </ul>
                 </div>
