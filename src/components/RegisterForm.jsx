@@ -35,10 +35,12 @@ function RegisterForm() {
               
           })
           const data = await res.json()
-          console.log('res',res)
-          console.log('data',data)
+        //   console.log('res',res)
+        //   console.log('data',data)
           if (res.status==200) {setSuccess("Successfully registered!")}
           else{SetError(data.errors[0].message); return}
+
+          return data;
 
       }
       catch(e){
@@ -56,7 +58,7 @@ function RegisterForm() {
       const user = await createUser();
       console.log('user', user);
       //login user before changing route
-      setTimeout(()=>{Router.push('/signIn')},2000);
+      if(user.data.email) setTimeout(()=>{Router.push('/signIn')},2000);
       
   }
 
