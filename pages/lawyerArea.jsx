@@ -10,6 +10,9 @@ export default function Cases() {
       router.push('signIn')
     }
   })
+
+  if (status!=='authenticated') return null;
+
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
