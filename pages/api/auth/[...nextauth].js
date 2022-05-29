@@ -37,6 +37,7 @@ const options = {
       }
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     jwt: true
   },
