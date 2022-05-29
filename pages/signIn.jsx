@@ -29,7 +29,7 @@ function SignIn({csrfToken}) {
   return (
     <div className="container mt-4 mb-auto">
       <div className="row justify-content-center">
-        <div className="col-6">
+        <div className="col-sm-12 col-md-8 col-lg-6">
           <form noValidate onSubmit={(e)=>handleSubmit(e)}>
             <div className="form-group">
               <input type="hidden" name="csrfToken" defaultValue={csrfToken} />
