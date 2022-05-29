@@ -34,8 +34,11 @@ function RegisterForm() {
               )
               
           })
+          const data = await res.json()
           console.log('res',res)
-          setSuccess("Successfully registered!")
+          console.log('data',data)
+          if (res.status==200) {setSuccess("Successfully registered!")}
+          else{SetError(data.errors[0].message); return}
 
       }
       catch(e){
@@ -50,7 +53,8 @@ function RegisterForm() {
           return
       }
       
-      await createUser();
+      const user = await createUser();
+      console.log('user', user);
       //login user before changing route
       setTimeout(()=>{Router.push('/signIn')},2000);
       

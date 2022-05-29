@@ -2,7 +2,7 @@
 
 export default function lawyerArea() {
   return (
-    <div className="container">
+    <div className="container mt-4">
       <div className="row justify-content-center">
         <div className="col-8">
           <select className="form-select mb-3" aria-label=".form-select-lg example" >
