@@ -18,7 +18,7 @@ export default function NavBar(){
 
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
+                        <li className="nav-item" >
                             <Link href="/"><a className="nav-link">Home</a></Link>
                         </li>
 
@@ -60,3 +60,5 @@ export default function NavBar(){
         </nav>
     )
 }
+
+
