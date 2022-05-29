@@ -9,10 +9,12 @@ import "nprogress/nprogress.css";
 import Router from "next/router";
 import NProgress from "nprogress"
 import {useEffect} from 'react'
+import {SessionProvider} from 'next-auth/react'
+
 config.autoAddCss = false
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: {session, ...pageProps} }) {
   NProgress.configure({showSpinner: false})
   useEffect(() => {
     const handleRouteStart = () => NProgress.start();
@@ -29,16 +31,22 @@ function MyApp({ Component, pageProps }) {
       Router.events.off("routeChangeError", handleRouteDone);
     };
   }, []);
-  return (<><Head>
+  return (
+  <>
+
+    <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    </Head>
+    <SessionProvider session={session}>
       <div className='d-flex flex-column justify-content-between vh-100'>
-      <NavBar/>
-      <Component {...pageProps} />
-      <Footer/>
+        <NavBar />
+        <Component {...pageProps} />
+        <Footer />
 
       </div>
-  </>)
+    </SessionProvider>
+  </>
+  )
 }
 
 export default MyApp
