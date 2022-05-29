@@ -51,7 +51,7 @@ function RegisterForm() {
       
       await createUser();
       //login user before changing route
-      setTimeout(()=>{Router.push('/')},2000);
+      setTimeout(()=>{Router.push('/signIn')},2000);
       
   }
 

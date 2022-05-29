@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faGem, faPhone, faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faGem, faHome, faPhone, faPrint } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   return (
@@ -81,9 +81,9 @@ function Footer() {
                 <h6 className="text-uppercase fw-bold mb-4">
                   Contact
                 </h6>
-                <p><i className="fas fa-home me-3"></i> Port Harcourt, Nigeria</p>
+                <p><FontAwesomeIcon className="me-3" icon={faHome} /> Port Harcourt, Nigeria</p>
                 <p>
-                  <i className="fas fa-envelope me-3"></i>
+                <FontAwesomeIcon className="me-3" icon={faEnvelope} />
                   info@example.com
                 </p>
                 <p> <FontAwesomeIcon className="me-3" icon={faPhone} /> +234 234 567 88</p>

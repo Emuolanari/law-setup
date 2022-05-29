@@ -21,11 +21,15 @@ export default function NavBar(){
                         </li>
 
                         <li className="nav-item">
-                            <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
+                            <Link href="/contact"><a className="nav-link">Contact</a></Link>
                         </li>
 
                         <li className="nav-item">
-                            <Link href="/register"><a className="nav-link">Login/Register</a></Link>
+                            <Link href="/register"><a className="nav-link">Register</a></Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link href="/signIn"><a className="nav-link">Sign In</a></Link>
                         </li>
 
                     </ul>
