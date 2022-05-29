@@ -1,6 +1,15 @@
+import {useSession} from 'next-auth/react'
+import Router from 'next/router'
+import { useRouter } from 'next/router'
 
-
-export default function lawyerArea() {
+export default function Cases() {
+  const router = useRouter();
+  const {data:session, status} = useSession({
+    required:true,
+    onUnauthenticated(){
+      router.push('signIn')
+    }
+  })
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
